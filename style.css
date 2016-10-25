@@ -2,6 +2,7 @@ body{
   background-color: #FFEBDB;
 }
 P {
+  font-family: Georgia;
   text-align: center;
   color: black;
   font-size: 25px;
@@ -12,6 +13,7 @@ ul {
   list-style: none;
 }
 li{
+  font-family: sans-serif;
   border: solid  1px white;
   color: white;
   background-color: brown;
@@ -21,6 +23,7 @@ li{
   width: 400px;
 }
 h1 {
+  font-family: Georgia;
   color: brown;
   text-align: center;
 }
