@@ -18,13 +18,8 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
       console.log(this.averagesCookiesSoldPerCustomer);/*declaring a variable with the identifier of salesHour that holds the value of the random number from the getCustomersPerHour function muiltiplied by the property cookie Sale (average cookies sold per hour)*/
       this.hourlySale.push(salesHour);//pushing the result of function popHour into the empty hourlySale array.
     }
-    tableNew = function() {
-      var main = document.getElementsByTagName('main')[0];
-      var table = document.createElement('table');
-      var tBody = document.createElement('tbody');
-    };
   };
-};
+}
 this.renderHTMLSales = function(){
   console.log('renderHTMLSales');
      //creating function to render the code onto html page.
@@ -34,22 +29,24 @@ this.renderHTMLSales = function(){
   h2.innerText = this.name; //h2 element will take name from property name 1st and pike.
   var main = document.getElementsByTagName('main')[0];
   main.appendChild(h2);
-  console.log(this.hourlySale);
-  var ul = document.createElement('ul');
+
+  function table(){
+  var main = document.getElementsByTagName('main')[0];
+  main.appendChild('table');
+
+  var table = document.createElement('table')
+  var tbody = document.createElement('tbody')
+
   for (var i = 0; i < hours.length; i++) {
-    var li = document.createElement('li');
-    li.innerText = hours[i] + ':' + this.hourlySale[i] + ' cookies';
-    ul.appendChild(li);
+    var th = document.createElement('th');
+    th.innerText = this.hours[i];
+    tbody.appendChild(th);
   }
-  var totalSales = 0;
-  for (var i = 0; i < this.hourlySale.length; i++) {
-    totalSales += this.hourlySale[i];
-  }
-  var li = document.createElement('li');
-  li.innerText = 'Total Sales ' + totalSales + ' cookies';
-  ul.appendChild(li);
-  main.appendChild(ul);
+  var trows = document.createElement('tr');
+  td.innerText = this.name;
+  th.appendChild('tr');
 };
+
 var pike = new Store('1st & Pike', 23, 65, 6.3);
 console.log(pike);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
