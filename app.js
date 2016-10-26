@@ -8,6 +8,7 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.hourlySale = [];
+  this.tally = 0;
   this.getCustomersPerHour = function() {
     console.log('getCustomersPerHour');
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust); /*Math.random() generates a random number. (Math.random() * (this.maximum - this.minumum) + this.minimum) */
@@ -52,6 +53,12 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
       td.innerText = this.hourlySale[i];
       tr.appendChild(td);
     }
+    for (var j = 0; j < this.hourlySale.length; j++) {
+      this.tally += this.hourlySale[j];
+    }
+    var td = document.createElement('td');
+    td.innerText = this.tally;
+    tr.appendChild(td);
   };
   storeArray.push(this);
 }
@@ -94,6 +101,7 @@ function renderAllSales() {
   for (var i = 0; i < storeArray.length; i++) {
     storeArray[i].renderHTMLSales();
   }
+
 }
 
 new Store('1st & Pike', 23, 65, 6.3);
