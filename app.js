@@ -121,11 +121,15 @@ function renderEverything() {
   createFooter();
 }
 
-renderEverything();
-
-var form = document.getElementById('form');
-function data(event){
+function submit(event) {
   event.preventDefault();
+  var name = event.target.store_name.value;
+  var minCust = event.target.min_cust.value;
+  var maxCust = event.target.max_Cust.value;
+  var averageCookiesSoldPerCustomer = event.target.averageCookiesSoldPerCustomer.value;
+  new Store(name, minCust, maxCust, averageCookiesSoldPerCustomer);
+}
 
-};
-form.addEventListener('submit', data);
+var form = document.getElementById('input');
+form.addEventListener('submit', submit);
+renderEverything();
