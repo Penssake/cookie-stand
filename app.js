@@ -55,7 +55,7 @@ var storeArray = [];
 // Works!
 function createTitle() {//header
   var h1 = document.createElement('h1');
-  h1.innerText = 'All Cookie Sales';
+  h1.innerText = 'Cookie Sales Report';
   var main = document.getElementsByTagName('main')[0];
   main.appendChild(h1);
 }
@@ -122,3 +122,10 @@ function renderEverything() {
 }
 
 renderEverything();
+
+var form = document.getElementById('form');
+function data(event){
+  event.preventDefault();
+
+};
+form.addEventListener('submit', data);

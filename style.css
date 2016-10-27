@@ -1,22 +1,69 @@
 body{
-  background-color: #FFEBDB;
+  background-image: url("http://trickvilla.com/wp-content/uploads/Wood-Background-Image.png");
+  opacity: 0.9;
 }
+
+ div {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+ }
+
+h1 {
+  font-family: serif;
+  font-size: 40px;
+  color: #FFBDAC;
+  text-align: center;
+}
+
+h2{
+  color: #FCA791;
+}
+
+#fish {
+  margin-top: auto;
+  width: 700px;;
+}
+
 P {
   font-family: Georgia;
   text-align: center;
-  color: black;
-  font-size: 25px;
+  color: #FCA791;
+  font-size: 20px;
+  margin: auto;
+  width: 700px;
 }
-h1 {
-  font-family: Georgia;
-  color: brown;
+
+table {
+  border-style: inset;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 700px;
+  background-color: white;
+}
+
+td {
+  padding: 5px;
+  border-style: solid;
+  background-color: #FCA791;
+  font-size: 20px;
   text-align: center;
 }
-h2{
-  color: brown;
+
+tr {
+    font-size: 20px;
 }
-form{
+1
+#formDiv {
   text-align: center;
-  margin-left: 40%;
-  margin-right: 40%;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+legend {
+  width: 500px;
 }
