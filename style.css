@@ -7,21 +7,6 @@ P {
   color: black;
   font-size: 25px;
 }
-ul {
-  font-family: sans-serif;
-  text-align: center;
-  list-style: none;
-}
-li{
-  font-family: sans-serif;
-  border: solid  1px white;
-  color: white;
-  background-color: brown;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-right: none;
-  width: 400px;
-}
 h1 {
   font-family: Georgia;
   color: brown;
@@ -29,4 +14,9 @@ h1 {
 }
 h2{
   color: brown;
+}
+form{
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
 }
