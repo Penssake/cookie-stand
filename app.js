@@ -1,14 +1,14 @@
 'use strict';
 
 var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-
-function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
-  this.name = name;
+//line 3 declares an array with the identifier(name) of the hours of the stores operation.
+function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) { /*a function with the parameters of store name, minimum customer, maximum customer, and average cookies sold her customer.*/
+  this.name = name; //universal function, this.name allows us to call function by various store names.
   this.averagesCookiesSoldPerCustomer = averagesCookiesSoldPerCustomer;
   this.minCust = minCust;
   this.maxCust = maxCust;
-  this.hourlySale = [];
-  this.tally = 0;
+  this.hourlySale = [];// empty hourlySale array where I will be storing the results of the this.cookieSale function.
+  this.tally = 0; //
   this.getCustomersPerHour = function() {
     console.log('getCustomersPerHour');
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust); /*Math.random() generates a random number. (Math.random() * (this.maximum - this.minumum) + this.minimum) */
@@ -28,37 +28,23 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
        //creating function to render the code onto html page.
     this.getCustomersPerHour();//function will generate a list for the results in the popHour function.
     this.cookieSale();
-    // var h2 = document.createElement('h2');//creating h2 element
-    // h2.innerText = this.name; //h2 element will take name from property name 1st and pike.
-    // main.appendChild(h2);
-      // var main = document.getElementsByTagName('main')[0];
-      // var tbody = document.createElement('tbody')
-    // storeLine.innerText = this.name;
-    // tr.appendChild(storeLine);
-    // for (var i = 0; i < hours.length; i++) {
-    //   var th = document.createElement('th');
-    //   th.innerText = hours[i];
-    //   tr.appendChild(th);
-    // }
-    // var trows = document.createElement('tr');
-    // td.innerText = this.name;
-    // th.appendChild('tr');
-    var tr = document.createElement('tr');
-    var table = document.getElementsByTagName('table')[0];
+
+    var tr = document.createElement('tr');//creating table row
+    var table = document.getElementsByTagName('table')[0];//connects to table element
     table.insertBefore(tr, document.getElementById('footer-row'));
-    var storeLine = document.createElement('td');
-    storeLine.innerText = this.name;
-    tr.appendChild(storeLine);
-    for (var i = 0; i < this.hourlySale.length; i++) {
-      var td = document.createElement('td');
-      td.innerText = this.hourlySale[i];
+    var storeLine = document.createElement('td');//creating a cell for each name.
+    storeLine.innerText = this.name;//giving value to storeLine
+    tr.appendChild(storeLine);//appending storeline to tr
+    for (var i = 0; i < this.hourlySale.length; i++) {/*for loop that will create cells for hour sales of each store */
+      var td = document.createElement('td');//declaring variable td, creating table cells.
+      td.innerText = this.hourlySale[i];//supplying cells with information, hourlySale [].
       tr.appendChild(td);
     }
-    for (var j = 0; j < this.hourlySale.length; j++) {
+    for (var j = 0; j < this.hourlySale.length; j++) {//for loop to talle total sales.
       this.tally += this.hourlySale[j];
     }
-    var td = document.createElement('td');
-    td.innerText = this.tally;
+    var td = document.createElement('td');//creating table cell
+    td.innerText = this.tally;//giving cell text
     tr.appendChild(td);
   };
   storeArray.push(this);
@@ -67,7 +53,7 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) {
 var storeArray = [];
 
 // Works!
-function createTitle() {
+function createTitle() {//header
   var h1 = document.createElement('h1');
   h1.innerText = 'All Cookie Sales';
   var main = document.getElementsByTagName('main')[0];
@@ -75,18 +61,18 @@ function createTitle() {
 }
 
 // Works!
-function createTable() {
+function createTable() { //creating table
   var main = document.getElementsByTagName('main')[0];
   var table = document.createElement('table');
   main.appendChild(table);
 }
 
 // Works!
-function createHeaderRow() {
+function createHeaderRow() {//creating header row
   var tr = document.createElement('tr');
   document.getElementsByTagName('table')[0].appendChild(tr);
   var blankSpace = document.createElement('th');
-  blankSpace.innerText = '';
+  blankSpace.innerText = '';//keeps first cell empty
   tr.appendChild(blankSpace);
   for (var i = 0; i < hours.length; i++) {
     var th = document.createElement('th');
