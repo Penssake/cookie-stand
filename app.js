@@ -10,23 +10,19 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) { /*a fun
   this.hourlySale = [];// empty hourlySale array where I will be storing the results of the this.cookieSale function.
   this.tally = 0; //
   this.getCustomersPerHour = function() {
-    console.log('getCustomersPerHour');
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust); /*Math.random() generates a random number. (Math.random() * (this.maximum - this.minumum) + this.minimum) */
   };
 
   this.cookieSale = function() {//creating a function to calculate an average cookie sale per hour.
-    console.log('cookieSale');
     for (var i = 0; i < hours.length; i++) {//starting a for loop to loop through the hours array declared on line 3
-      var salesHour = Math.floor(this.getCustomersPerHour() * this.averagesCookiesSoldPerCustomer);
-      console.log(this.averagesCookiesSoldPerCustomer);/*declaring a variable with the identifier of salesHour that holds the value of the random number from the getCustomersPerHour function muiltiplied by the property cookie Sale (average cookies sold per hour)*/
+      var salesHour = Math.floor(this.getCustomersPerHour() * this.averagesCookiesSoldPerCustomer);/*declaring a variable with the identifier of salesHour that holds the value of the random number from the getCustomersPerHour function muiltiplied by the property cookie Sale (average cookies sold per hour)*/
       this.hourlySale.push(salesHour);//pushing the result of function popHour into the empty hourlySale array.
     }
   };
 
   this.renderHTMLSales = function() {
-    console.log('renderHTMLSales');
        //creating function to render the code onto html page.
-    this.getCustomersPerHour();//function will generate a list for the results in the popHour function.
+    this.getCustomersPerHour();
     this.cookieSale();
 
     var tr = document.createElement('tr');//creating table row
@@ -113,23 +109,35 @@ new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 
+createTitle();
+
 function renderEverything() {
-  createTitle();
   createTable();
   createHeaderRow();
   renderAllSales();
   createFooter();
-}
+};
+renderEverything();
 
+function clearTable() {
+  var table = document.getElementById('table')[0];
+  table.innerHTML = '';
+  renderEverything();
+};
 function submit(event) {
+  console.log('render prbs');
   event.preventDefault();
   var name = event.target.store_name.value;
-  var minCust = event.target.min_cust.value;
-  var maxCust = event.target.max_Cust.value;
-  var averageCookiesSoldPerCustomer = event.target.averageCookiesSoldPerCustomer.value;
-  new Store(name, minCust, maxCust, averageCookiesSoldPerCustomer);
-}
-
-var form = document.getElementById('input');
+  var minCust = parseInt(event.target.min_cust.value);
+  var maxCust = parseInt(event.target.max_cust.value);
+  var averagesCookiesSoldPerCustomer = parseInt(event.target.averagesCookiesSoldPerCustomer.value);
+  new Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer);
+  clearTable();
+};
+var form = document.getElementById('form');
 form.addEventListener('submit', submit);
-renderEverything();
+// form.addEventListener('submit', function(event) {
+//   alert('alert');
+//   event.preventDefault();
+//   console.log('foo');
+// });
