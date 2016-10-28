@@ -2,16 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Objects Domain Modeling</title>
+    <title>Salmon shop</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <h1>Pat's Salmon Cookies<h1>
-    <!-- <img src="http://imgur.com/DxymRgz" /> -->
-    <p>Seattleite Pat has come up with a business idea by combining two signature Seattle icons: Pat has developed a recipe for a coffee-time confection called Salmon Cookies. Cookies with real wild-caught salmon chopped up and baked right into dough. Delicious!</p>
-    <main>
+  <div id="contentBorder">
+  <main>
+    <h1 id="mainHeader">Pat's Salmon Cookies<h1>
+      <img id="fish"src="salmon.png" />
+<div id="paragraph">
+    <p>Seattleite Pat is a good guy. He's come up with Seattle's soon to be newest obsession. Pat has taken wild-caught salmon, chopped them up and baked right into his secret cookie dough recipe. Delicious!</p>
+</div>
 
-    </main>
-  <script src="app.js" charset="utf-8" href="app.js"></script>
+  </main>
+  <br>
+</div>
+  <footer>
+<div id="formDiv">
+  <form id="form" action="" method="post">
+      <p>Store Name:
+        <br>
+        <input id="name" type="text" name="store_name" />
+      </p>
+      <p>Minimum Customer:
+        <br>
+        <input id="minCust" type="text" name="min_cust" />
+      </p>
+      <p>Maximum Customer:
+        <br>
+        <input id="maxCust" type="text" name="max_cust" />
+      </p>
+      <p>Average cookie per guest:
+        <br>
+        <input id="AveCookie" type="text" name="ave_cookie" />
+      </p>
+        <input id="input" type="submit" value="Submit Sales" >
+  </form>
+</footer>
+</div>
+  <script src="app.js" charset="utf-8" href=""></script>
 </body>
 </html>
