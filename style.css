@@ -1,32 +1,77 @@
 body{
-  background-color: #FFEBDB;
+  background-image: url("http://trickvilla.com/wp-content/uploads/Wood-Background-Image.png");
+  opacity: 0.9;
 }
+
+ div {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+ }
+
+h1 {
+  font-family: serif;
+  font-size: 40px;
+  color: #FFBDAC;
+  text-align: center;
+}
+
+h2{
+  color: #FCA791;
+}
+
+#fish {
+  transform: rotate(10deg);
+  width: 700px;
+}
+
 P {
   font-family: Georgia;
   text-align: center;
-  color: black;
-  font-size: 25px;
+  color: #FCA791;
+  font-size: 20px;
+  margin: auto;
+  width: 700px;
 }
-ul {
-  font-family: sans-serif;
+
+#paragraph {
+  padding: inherit;
+}
+
+table {
+  border-style: inset;
+  width: 700px;
+  background-color: white;
+}
+
+td {
+  padding: 5px;
+  border-style: solid;
+  background-color: #FCA791;
+  font-size: 20px;
   text-align: center;
-  list-style: none;
 }
-li{
-  font-family: sans-serif;
-  border: solid  1px white;
-  color: white;
-  background-color: brown;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-right: none;
-  width: 400px;
+
+tr {
+    font-size: 20px;
 }
-h1 {
-  font-family: Georgia;
-  color: brown;
+1
+#formDiv {
   text-align: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
-h2{
-  color: brown;
+
+#input {
+  width: 90px;
+  height: 40px;
+  font-family: serif;
+  background-color: #FCA791;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20%;
+  border: solid black 2px;
 }
