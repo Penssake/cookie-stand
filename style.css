@@ -15,10 +15,27 @@ h1 {
   font-size: 40px;
   color: #FFBDAC;
   text-align: center;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 
 h2{
   color: #FCA791;
+}
+
+h4 {
+  margin: 0px;
+}
+
+#caption {
+  font-size: 15px;
+}
+
+#family {
+  width: 400px;
+  height: 300px;
 }
 
 #fish {
@@ -33,6 +50,7 @@ P {
   font-size: 20px;
   margin: auto;
   width: 700px;
+  padding: 10px;
 }
 
 #paragraph {
@@ -40,17 +58,18 @@ P {
 }
 
 table {
-  border-style: inset;
+  border: none;
   width: 700px;
   background-color: white;
 }
 
 td {
   padding: 5px;
-  border-style: solid;
+  border: none;
   background-color: #FCA791;
   font-size: 20px;
   text-align: center;
+  color: white;
 }
 
 tr {
