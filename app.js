@@ -1,46 +1,46 @@
 'use strict';
 
 var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-//line 3 declares an array with the identifier(name) of the hours of the stores operation.
-function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) { /*a function with the parameters of store name, minimum customer, maximum customer, and average cookies sold her customer.*/
-  this.name = name; //universal function, this.name allows us to call function by various store names.
-  this.averagesCookiesSoldPerCustomer = averagesCookiesSoldPerCustomer;
+
+function Store(name, minCust, maxCust, averageCookiesSoldPerCustomer) {
+  this.name = name;
+  this.averageCookiesSoldPerCustomer = averageCookiesSoldPerCustomer;
   this.minCust = minCust;
   this.maxCust = maxCust;
-  this.hourlySale = [];// empty hourlySale array where I will be storing the results of the this.cookieSale function.
-  this.tally = 0; //
+  this.hourlySale = [];
+  this.tally = 0;
   this.getCustomersPerHour = function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust); /*Math.random() generates a random number. (Math.random() * (this.maximum - this.minumum) + this.minimum) */
+    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   };
 
-  this.cookieSale = function() {//creating a function to calculate an average cookie sale per hour.
-    for (var i = 0; i < hours.length; i++) {//starting a for loop to loop through the hours array declared on line 3
-      var salesHour = Math.floor(this.getCustomersPerHour() * this.averagesCookiesSoldPerCustomer);/*declaring a variable with the identifier of salesHour that holds the value of the random number from the getCustomersPerHour function muiltiplied by the property cookie Sale (average cookies sold per hour)*/
-      this.hourlySale.push(salesHour);//pushing the result of function popHour into the empty hourlySale array.
+  this.cookieSale = function() {
+    for (var i = 0; i < hours.length; i++) {
+      var salesHour = Math.floor(this.getCustomersPerHour() * this.averageCookiesSoldPerCustomer);
+      this.hourlySale.push(salesHour);
     }
   };
 
   this.renderHTMLSales = function() {
-       //creating function to render the code onto html page.
+
     this.getCustomersPerHour();
     this.cookieSale();
 
-    var tr = document.createElement('tr');//creating table row
-    var table = document.getElementsByTagName('table')[0];//connects to table element
+    var tr = document.createElement('tr');
+    var table = document.getElementsByTagName('table')[0];
     table.insertBefore(tr, document.getElementById('footer-row'));
-    var storeLine = document.createElement('td');//creating a cell for each name.
-    storeLine.innerText = this.name;//giving value to storeLine
-    tr.appendChild(storeLine);//appending storeline to tr
-    for (var i = 0; i < this.hourlySale.length; i++) {/*for loop that will create cells for hour sales of each store */
-      var td = document.createElement('td');//declaring variable td, creating table cells.
-      td.innerText = this.hourlySale[i];//supplying cells with information, hourlySale [].
+    var storeLine = document.createElement('td');
+    storeLine.innerText = this.name;
+    tr.appendChild(storeLine);
+    for (var i = 0; i < this.hourlySale.length; i++) {
+      var td = document.createElement('td');
+      td.innerText = this.hourlySale[i];
       tr.appendChild(td);
     }
-    for (var j = 0; j < this.hourlySale.length; j++) {//for loop to talle total sales.
+    for (var j = 0; j < this.hourlySale.length; j++) {
       this.tally += this.hourlySale[j];
     }
-    var td = document.createElement('td');//creating table cell
-    td.innerText = this.tally;//giving cell text
+    var td = document.createElement('td');
+    td.innerText = this.tally;
     tr.appendChild(td);
   };
   storeArray.push(this);
@@ -48,27 +48,24 @@ function Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer) { /*a fun
 
 var storeArray = [];
 
-// Works!
-function createTitle() {//header
+function createTitle() {
   var h1 = document.createElement('h1');
   h1.innerText = 'Cookie Sales Report';
   var main = document.getElementsByTagName('main')[0];
   main.appendChild(h1);
 }
 
-// Works!
-function createTable() { //creating table
+function createTable() {
   var main = document.getElementsByTagName('main')[0];
   var table = document.createElement('table');
   main.appendChild(table);
 }
 
-// Works!
-function createHeaderRow() {//creating header row
+function createHeaderRow() {
   var tr = document.createElement('tr');
   document.getElementsByTagName('table')[0].appendChild(tr);
   var blankSpace = document.createElement('th');
-  blankSpace.innerText = '';//keeps first cell empty
+  blankSpace.innerText = '';
   tr.appendChild(blankSpace);
   for (var i = 0; i < hours.length; i++) {
     var th = document.createElement('th');
@@ -120,24 +117,29 @@ function renderEverything() {
 renderEverything();
 
 function clearTable() {
-  var table = document.getElementById('table')[0];
-  table.innerHTML = '';
+  var myTable = document.getElementsByTagName('table')[0];
+  myTable.innerHTML = '';
   renderEverything();
 };
+
 function submit(event) {
-  console.log('render prbs');
   event.preventDefault();
   var name = event.target.store_name.value;
   var minCust = parseInt(event.target.min_cust.value);
   var maxCust = parseInt(event.target.max_cust.value);
-  var averagesCookiesSoldPerCustomer = parseInt(event.target.averagesCookiesSoldPerCustomer.value);
-  new Store(name, minCust, maxCust, averagesCookiesSoldPerCustomer);
+  console.log('averageCookiesSoldPerCustomer');
+  var averageCookiesSoldPerCustomer = parseInt(Math.round(event.target.averageCookiesSoldPerCustomer.value));
+  new Store(name, minCust, maxCust, averageCookiesSoldPerCustomer);
   clearTable();
 };
 var form = document.getElementById('form');
 form.addEventListener('submit', submit);
-// form.addEventListener('submit', function(event) {
-//   alert('alert');
-//   event.preventDefault();
-//   console.log('foo');
-// });
+
+// function formSubmit(){
+//   var form = getElementById('form')[0];
+//   form.submit();
+//   form.reset();
+//   return false;
+// }
+//
+// formSubmit();
