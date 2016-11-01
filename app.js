@@ -117,7 +117,7 @@ function renderEverything() {
 renderEverything();
 
 function clearTable() {
-  var table = document.getElementById('table')[0];
+  var table = document.getElementsByTagName('table')[0];
   table.innerHTML = '';
   renderEverything();
 };
@@ -134,3 +134,12 @@ function submit(event) {
 };
 var form = document.getElementById('form');
 form.addEventListener('submit', submit);
+
+// function formSubmit(){
+//   var form = getElementById('form')[0];
+//   form.submit();
+//   form.reset();
+//   return false;
+// }
+//
+// formSubmit();
