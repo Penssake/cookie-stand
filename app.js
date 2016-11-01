@@ -117,8 +117,8 @@ function renderEverything() {
 renderEverything();
 
 function clearTable() {
-  var table = document.getElementsByTagName('table')[0];
-  table.innerHTML = '';
+  var myTable = document.getElementsByTagName('table')[0];
+  myTable.innerHTML = '';
   renderEverything();
 };
 
