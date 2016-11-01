@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Salmon shop</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-  <div id="contentBorder">
-  <main>
-  </main>
-  <br>
+<head>
+  <meta charset="utf-8">
+  <title>Salmon shop</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div>
+    <img id="chinook"src="images/chinook.png" />
+    <main>
+      <p>Support our local business!
+      <br>
+      Buy one of Pat's Salmon Cookies t-shirts!</p>
+      <img id="shirt"src="images/shirt.png" />
+      <figcaption id="caption">$29.99</figcaption>
+    </main>
+    <br>
   </div>
   <footer>
-<div id="formDiv">
-  <form id="form" action="" method="post">
-      <p>Store Name:
-        <br>
-        <input id="name" type="text" name="store_name" />
-      </p>
-      <p>Minimum Customer:
-        <br>
-        <input id="minCust" type="text" name="min_cust" />
-      </p>
-      <p>Maximum Customer:
-        <br>
-        <input id="maxCust" type="text" name="max_cust" />
-      </p>
-      <p>Average cookie per guest:
-        <br>
-        <input id="AveCookie" type="text" name="ave_cookie" />
-      </p>
+    <div id="formDiv">
+      <form id="form" action="" method="post">
+        <p>Store Name:
+          <br>
+          <input id="name" type="text" name="store_name" />
+        </p>
+        <p>Minimum Customer:
+          <br>
+          <input id="minCust" type="text" name="min_cust" />
+        </p>
+        <p>Maximum Customer:
+          <br>
+          <input id="maxCust" type="text" name="max_cust" />
+        </p>
+        <p>Average cookie per guest:
+          <br>
+          <input id="averageCookiesSoldPerCustomer" type="text" name="ave_cookie" />
+        </p>
         <input id="input" type="submit" value="Submit Sales" >
-  </form>
+      </form>
 
-  <form id="input" method="get" action="index.html">
-    <button type="submit">Home Page</button>
-</form>
+      <form id="input" method="get" action="index.html">
+        <button id="submit" type="submit">Home Page</button>
+      </form>
 
-</footer>
-</div>
+    </footer>
+  </div>
   <script src="app.js" charset="utf-8" href="app.js"></script>
 </body>
 </html>

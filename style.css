@@ -31,6 +31,13 @@ h4 {
 
 #caption {
   font-size: 15px;
+  text-align: center;
+}
+
+#caption2 {
+  font-size: 20px;
+  text-align: center;
+  color: white;
 }
 
 #family {
@@ -43,18 +50,28 @@ h4 {
   width: 700px;
 }
 
+#chinook {
+  width: 400px;
+  opacity: 0.5;
+  border: solid 4px;
+  border-color: brown;
+  border-radius: 20px;
+  margin-left: 150px;
+}
+
 P {
   font-family: Georgia;
   text-align: center;
-  color: #FCA791;
+  color: white;
   font-size: 20px;
   margin: auto;
   width: 700px;
-  padding: 10px;
+  padding: 13px;
 }
 
-#paragraph {
-  padding: inherit;
+#shirt {
+  width: 300px;
+  margin-left: 200px;
 }
 
 table {
@@ -84,13 +101,47 @@ tr {
   padding: 5px;
 }
 
-#input {
+#submit {
   width: 90px;
   height: 40px;
   font-family: serif;
   background-color: #FCA791;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0px;
+  margin-top: 10px;
   border-radius: 20%;
   border: solid black 2px;
+}
+
+#submit1 {
+  width: 90px;
+  height: 40px;
+  font-family: serif;
+  background-color: #FCA791;
+  margin-right: 335px;
+  margin-top: 10px;
+  border-radius: 20%;
+  border: solid black 2px;
+}
+
+#input {
+margin-left: 320px;
+}
+
+#img2 {
+  margin: 15px;
+  float: left;
+}
+
+#img3 {
+  margin: 40px;
+  float: right;
+}
+
+#finalParagraph {
+  background-color: #FCA791;
+  width: 200px;
+  margin-right: 780px;
+  margin-top: 40px;
+  padding: 25px;
+
 }
