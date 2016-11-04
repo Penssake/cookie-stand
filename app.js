@@ -20,10 +20,10 @@ function Store(name, minCust, maxCust, averageCookiesSoldPerCustomer) {
     }
   };
 
-  this.renderHTMLSales = function() {
+  this.getCustomersPerHour();
+  this.cookieSale();
 
-    this.getCustomersPerHour();
-    this.cookieSale();
+  this.renderHTMLSales = function() {
 
     var tr = document.createElement('tr');
     var table = document.getElementsByTagName('table')[0];
