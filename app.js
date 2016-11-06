@@ -131,15 +131,13 @@ function submit(event) {
   var averageCookiesSoldPerCustomer = parseInt(Math.round(event.target.averageCookiesSoldPerCustomer.value));
   new Store(name, minCust, maxCust, averageCookiesSoldPerCustomer);
   clearTable();
+  formSubmit();
 };
 var form = document.getElementById('form');
 form.addEventListener('submit', submit);
 
-// function formSubmit(){
-//   var form = getElementById('form')[0];
-//   form.submit();
-//   form.reset();
-//   return false;
-// }
-//
-// formSubmit();
+function formClear(){
+  var form = document.getElementById('form')[0];
+  this.reset();
+  return false;
+}
