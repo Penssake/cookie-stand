@@ -184,3 +184,18 @@ p {
   padding: 40px;
   border-radius: 50%;
 }
+
+#submit1 {
+  width: 110px;
+  padding: 10px;
+  background-color: #FC514D;
+  font-family: cursive sans-serif;
+  font-size: 15px;
+  color: white;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+#submit1:hover {
+  background-color: #8F898D;
+}
