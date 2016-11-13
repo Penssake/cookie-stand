@@ -207,10 +207,19 @@ label, input {
 }
  #sales {
    width: 300px;
-   margin-left: auto;
-   margin-right: auto;
+   margin-left: 200px;
  }
 
 #shirt {
   border-radius: 50%;
+}
+
+.fishTwoDiv {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fishTwo {
+  width: 200px;
 }
